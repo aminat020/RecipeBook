@@ -5,11 +5,12 @@ env:
   erreur: true
   var: RecipeBook
 
+jobs:
   RecipeBook-jobs:
     runs-on: ubuntu-latest
     steps:
       - name : display Welcome message
-      - run: echo "Welcome to my Recipe book "
+      - run: echo "Welcome to $var "
       - name: Check if there is no error
         if: ${{env.erreur ==true}}
         run: echo "Il y a une erreur sur l'application qui empêche le build"
