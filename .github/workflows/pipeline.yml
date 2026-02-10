@@ -1,6 +1,5 @@
-name: RecipeBook pipeline
+name: RecipeBook
 on: push
- 
 env:
   erreur: true
   var: "RecipeBook"
@@ -8,7 +7,7 @@ jobs:
   RecipeBook-jobs:
     runs-on: ubuntu-latest
     steps:
-      - name : "display Welcome message"
+      - name: "display Welcome message"
       - run: echo "Welcome to $var "
       - name: Check if there is no error
         if: ${{env.erreur ==true}}
