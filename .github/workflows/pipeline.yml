@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "display Welcome message"
-      - run: echo "Welcome to $var "
+        run: echo "Welcome to $var "
       - name: Check if there is no error
         if: ${{env.erreur ==true}}
         run: echo "Il y a une erreur sur l'application qui empêche le build"
