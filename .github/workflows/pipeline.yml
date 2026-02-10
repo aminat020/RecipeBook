@@ -1,7 +1,9 @@
 name: RecipeBook
-on: push
+on: [push, pull_request]
 env:
   erreur: true
+  PUSH: "c'est un push"
+  PR: "C'est un Pull request"
   var: "RecipeBook"
 jobs:
   RecipeBook-jobs:
@@ -12,3 +14,15 @@ jobs:
       - name: Check if there is no error
         if: ${{env.erreur == 'true'}}
         run: echo "Il y a une erreur sur l'application qui empêche le build"
+  job_push:
+    runs-on: ubuntu-latest
+    if: ${{github.event_name == 'push'}}
+    steps:
+      - name: "C'est un push"
+        run: echo "$PUSH "
+  job_pull:
+    runs-on: ubuntu-latest
+    if: ${{github.event_name == 'pull_request'}}
+    steps:
+      - name: "C'est un pull"
+        run: echo "$PR "
