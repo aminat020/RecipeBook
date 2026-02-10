@@ -1,10 +1,9 @@
 name: RecipeBook pipeline
 on: push
-jobs: 
+ 
 env:
   erreur: true
-  var: RecipeBook
-
+  var: "RecipeBook"
 jobs:
   RecipeBook-jobs:
     runs-on: ubuntu-latest
